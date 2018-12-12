@@ -46,7 +46,7 @@ function numberCheck(password){
 }
 
 //returns true or false if there is a special character in the password
-function specialCheck(check){
+function specialCheck(password){
 
   for(let i = 0; i <= password.length; i++){
 
@@ -84,13 +84,19 @@ function grade(password){
   else if(!numberCheck(password)){
   return "okay"
   }
-  else if(!specialCheck(check)){
+  else if(!specialCheck(password)){
   return "good"
   }
   else if(passedAllChecks(password)){
-  return "great"
-  }
-  else if(passedAllChecks(password) && superLengthCheck(password)){
-  return "super!"
-  }
+
+    if(superLengthCheck(password)){
+      return "super!"
+    }
+    else{
+      return "great"
+    }
+    
+    }
 }
+
+console.log(grade("Forthwe^n0w6v57fwd#$1fdsgfad2783452%@!$!6iv^67$V4igo"));

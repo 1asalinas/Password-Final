@@ -3,7 +3,7 @@ function randomPinn(len){
 
   let pass = "";
 
-  for(/*here*/){
+  for(let i = 0; i <= len.length; i++){
 
     let randomNumber = Math.floor(10*Math.random())+48;
     pass += String.fromCharCode(randomNumber);
