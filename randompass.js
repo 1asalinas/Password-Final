@@ -3,7 +3,7 @@ function randomPinn(len){
 
   let pass = "";
 
-  for(let i = 0; i <= len.length; i++){
+  for(let i = 0; i < len.length; i++){
 
     let randomNumber = Math.floor(10*Math.random())+48;
     pass += String.fromCharCode(randomNumber);
@@ -14,11 +14,17 @@ function randomPinn(len){
 
 
 
-
-
 //returns a string of random upper and lower case characters of the proper length
 function randomWord(len){
+ 
+  let pass = "";
 
+  for(let i = 0; i <= len.length; i++){
+    let randomnumber = Math.floor(26*Math.random())+97;
+    pass += String.fromCharCode(randomNumber);
+  }
+
+  return pass;
 
 }
 
@@ -42,10 +48,19 @@ function randomPass(len){
 //returns a string of pretty much any ASCII characters, letters, numbers, and specials
 function randomSpecialPass(len){
 
+  let pass = "";
+
+  for(let i = 0; i < len.length; i++){
+
+    let randomNumber = Math.floor(10*Math.random())+33;
+    pass += String.fromCharCode(randomNumber);
+  }
+
+  return pass;
 
 }
 
-
+console.log(randomSpecialPass(5));
 
 
 
