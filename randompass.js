@@ -5,7 +5,7 @@ function randomPinn(len){
 
   for(let i = 0; i < len.length; i++){
 
-    let randomNumber = Math.floor(10*Math.random())+48;
+    let randomNumber = Math.floor(9*Math.random())+48;
     pass += String.fromCharCode(randomNumber);
   }
 
@@ -20,8 +20,18 @@ function randomWord(len){
   let pass = "";
 
   for(let i = 0; i <= len.length; i++){
-    let randomnumber = Math.floor(26*Math.random())+97;
-    pass += String.fromCharCode(randomNumber);
+
+   let r = Math.random();
+
+    if(r < 0.50){
+      let randomNumber = Math.floor(25*Math.random())+97;
+      pass += String.fromCharCode(randomNumber);
+    }
+
+    else{
+      let randomNumber = Math.floor(25*Math.random())+65;
+      pass += String.fromCharCode(randomNumber);
+    }
   }
 
   return pass;
@@ -31,11 +41,23 @@ function randomWord(len){
 
 
 
-
 //returns a string of random letters and numbers of the proper length
 function randomPass(len){
 
+  let pass = ""
 
+  for(let  i = 0; i < len.length; i++){
+    
+    let r = Math.random();
+
+    if (r < 0.50){
+      pass += randomPinn(1);
+    }  
+    else{
+      pass += randomPass(1);
+    }
+ }
+  return pass;
 }
 
 
@@ -52,7 +74,7 @@ function randomSpecialPass(len){
 
   for(let i = 0; i < len.length; i++){
 
-    let randomNumber = Math.floor(10*Math.random())+33;
+    let randomNumber = Math.floor(93*Math.random())+33;
     pass += String.fromCharCode(randomNumber);
   }
 
@@ -60,7 +82,6 @@ function randomSpecialPass(len){
 
 }
 
-console.log(randomSpecialPass(5));
 
 
 
@@ -68,5 +89,14 @@ console.log(randomSpecialPass(5));
 //same as the code above, just pass in a length of 20.
 function randomSuperPass(){
 
+  let pass = "";
+
+  for(let i = 0; i < 20; i++){
+
+    let randomNumber = Math.floor(93*Math.random())+33;
+    pass += String.fromCharCode(randomNumber);
+  }
+
+  return pass;
 
 }
